@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
+/**
+ * 布局根文件
+ */
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -25,8 +28,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+      <body>
+        <header className="bg-blue-600 p-4 text-white">
+          <h1>May</h1>
+        </header>
+        <main>{children}</main>
+        <footer className="bg-gray-800 text-white text-center p-4">
+          <p>&copy; 2024 May</p>
+        </footer>
       </body>
     </html>
   );
